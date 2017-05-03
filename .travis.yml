@@ -2,6 +2,8 @@ language: ruby
 cache: bundler
 rvm:
   - 2.4.0
+notifications:
+  email: false
 services:
   - postgresql
 before_script:
