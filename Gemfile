@@ -14,8 +14,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
-group :development do
+group :development, :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'pry-byebug'
+  gem 'rspec-rails'
+end
+
+group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end

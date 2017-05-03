@@ -2,7 +2,15 @@ language: ruby
 cache: bundler
 rvm:
   - 2.4.0
+notifications:
+  email: false
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database rails_messaging_test;' -U postgres
 script:
+  - bundle exec rspec
+  - bundle exec cucumber
 deploy:
   provider: heroku
   api_key:
